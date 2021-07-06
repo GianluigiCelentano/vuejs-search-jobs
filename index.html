@@ -20,7 +20,7 @@
                     <ul>
                         <li class="job" v-for='(job, index) in jobs'>
                             <div class="star" v-for='index in starred' v-if='job.id === index'> <i class="fas fa-star"></i> </div>
-                            <!-- <div class="star" v-else> <i class="far fa-star"></i> </div> -->
+                            <div class="star" v-else> <i class="far fa-star"></i> </div>
                             <div class="check" v-for='index in applied' v-if='job.id === index'> <i class="fas fa-check-square"></i> </div>
                             <div>id: {{job.id}}</div>
                             <div>company: {{job.company}}</div>
