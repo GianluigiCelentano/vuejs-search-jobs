@@ -1,0 +1,10 @@
+li {
+    list-style: none;
+}
+.job {
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+.star, .check {
+    float: right
+}
