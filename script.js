@@ -73,7 +73,7 @@ const app = new Vue ({
           }
        },
        deleteStar: function(index) {
-        this.starred.splice(index, 1)
+        this.starred.splice(index, +1)
     }
     }
 })
