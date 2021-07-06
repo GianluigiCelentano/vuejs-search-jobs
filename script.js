@@ -64,8 +64,13 @@ const app = new Vue ({
          this.starred.push(index +1)
        },
        addApp: function(index) {
-         this.applied.push(index +1)
-          this.starred.splice(this.index, 1)
+          this.applied.push(index +1)
+          this.starred.splice(index, 1)
+          if(this.applied.push(index +1)) {
+            setTimeout(function(){
+              alert("candidatura inviata")
+          }, 1000);
+          }
        },
        deleteStar: function(index) {
         this.starred.splice(index, 1)
