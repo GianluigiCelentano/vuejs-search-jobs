@@ -64,7 +64,7 @@ const app = new Vue ({
          this.starred.push(index +1)
        },
        addApp: function(index) {
-          this.applied.push(index)
+          this.applied.push(this.id)
           this.starred.splice(index, 1)
           if(this.applied.push(index +1)) {
             setTimeout(function(){
@@ -73,7 +73,7 @@ const app = new Vue ({
           }
        },
        deleteStar: function(index) {
-        this.starred.splice(index, +1)
+        this.starred.splice(index, 1)
     }
     }
 })
