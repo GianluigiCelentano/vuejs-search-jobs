@@ -19,9 +19,10 @@
                 <div class="col-5 offset-3">
                     <ul>
                         <li class="job" v-for='(job, index) in jobs'>
-                            <div class="star" v-for='index in starred' v-if='job.id === index'> <i class="fas fa-star"></i> </div>
-                            <div class="star" v-else> <i class="far fa-star"></i> </div>
-                            <div class="check" v-for='index in applied' v-if='job.id === index'> <i class="fas fa-check-square"></i> </div>
+                            <div class="star" @click='deleteStar' v-if='starred.includes(index +1)'> <i class="fas fa-star"></i> </div>
+                            <div class="star" @click='addStar(index)' v-else> <i class="far fa-star"></i> </div>
+                            <div class="check" v-if='applied.includes(index +1)'> <i class="fas fa-check-square"></i> </div>
+                            <div class="star"  @click='addApp(index)' v-else> <i class="far fa-check-square"></i> </div>
                             <div>id: {{job.id}}</div>
                             <div>company: {{job.company}}</div>
                             <div>position: {{job.position}}</div>
@@ -29,6 +30,15 @@
                             <div>date: {{job.created_at}}</div>
                             <div>city: {{job.city}}</div>
                             <div>contract: {{job.contract}}</div>
+                        </li>
+                        <li v-for='(jobs, index) in jobs' v-if='starred.includes(index +1)' v-if='applied.includes(index +1)'></li>
+                            <div>id: {{jobs.id}}</div>
+                            <div>company: {{jobs.company}}</div>
+                            <div>position: {{jobs.position}}</div>
+                            <div>description: {{jobs.description}}</div>
+                            <div>date: {{jobs.created_at}}</div>
+                            <div>city: {{jobs.city}}</div>
+                            <div>contract: {{jobs.contract}}</div>
                         </li>
                     </ul>
                 </div>

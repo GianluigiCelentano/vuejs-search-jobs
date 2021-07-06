@@ -1,3 +1,5 @@
+Vue.config.devtools = true
+
 const app = new Vue ({
     el: '#app',
     data: {
@@ -58,6 +60,15 @@ const app = new Vue ({
 
     },
     methods: {
-       
+       addStar: function(index) {
+         this.starred.push(index +1)
+       },
+       addApp: function(index) {
+         this.applied.push(index +1)
+          this.starred.splice(this.index, 1)
+       },
+       deleteStar: function(index) {
+        this.starred.splice(index, 1)
+    }
     }
 })

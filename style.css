@@ -6,5 +6,6 @@ li {
     border: 1px solid lightgrey;
 }
 .star, .check {
-    float: right
+    float: right;
+    font-weight: 15px;
 }
